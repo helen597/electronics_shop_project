@@ -22,4 +22,4 @@ class Supplier(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=150, verbose_name='Title')
     model = models.CharField(max_length=150, verbose_name='Model')
-    date = models.DateField(default='', **NULLABLE, verbose_name='Manufacture date')
+    date = models.DateField(default='', **NULLABLE, verbose_name='Release date')
