@@ -15,7 +15,7 @@ class Supplier(models.Model):
         'Product', **NULLABLE, on_delete=models.SET_NULL, verbose_name='Product')
     supplier = models.ForeignKey(
         'Supplier', **NULLABLE, on_delete=models.SET_NULL, verbose_name='Supplier')
-    debt = models.FloatField(default=0, verbose_name='Debt')
+    debt = models.DecimalField(max_digits=11, decimal_places=2, default=0.00, verbose_name='Debt')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Creation time')
 
 
