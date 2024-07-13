@@ -1,10 +1,22 @@
 from django.db import models
 
 NULLABLE = {'null': True, 'blank': True}
+TYPE_CHOICES = (
+    ('1', 'factory'),
+    ('2', 'mass retailer'),
+    ('3', 'self-employed'),
+)
+LEVEL_CHOICES = (
+    (0, '0'),
+    (1, '1'),
+    (2, '2'),
+)
 
 
 # Create your models here.
 class Supplier(models.Model):
+    type = models.CharField(choices=TYPE_CHOICES)
+    level = models.IntegerField(choices=LEVEL_CHOICES)
     title = models.CharField(max_length=150, verbose_name='Title')
     email = models.EmailField(verbose_name='E-mail')
     country = models.CharField(max_length=150, verbose_name='Country')
