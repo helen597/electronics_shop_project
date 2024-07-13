@@ -16,7 +16,7 @@ LEVEL_CHOICES = (
 # Create your models here.
 class Supplier(models.Model):
     type = models.CharField(choices=TYPE_CHOICES)
-    level = models.IntegerField(choices=LEVEL_CHOICES)
+    level = models.SmallIntegerField(choices=LEVEL_CHOICES)
     title = models.CharField(max_length=150, verbose_name='Title')
     email = models.EmailField(verbose_name='E-mail')
     country = models.CharField(max_length=150, verbose_name='Country')
@@ -30,8 +30,24 @@ class Supplier(models.Model):
     debt = models.DecimalField(max_digits=11, decimal_places=2, default=0.00, verbose_name='Debt')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Creation time')
 
+    def __str__(self):
+        return f'{self.level} {self.type} {self.title}'
+
+    class Meta:
+        verbose_name = 'supplier'
+        verbose_name_plural = 'suppliers'
+        ordering = ('title',)
+
 
 class Product(models.Model):
     title = models.CharField(max_length=150, verbose_name='Title')
     model = models.CharField(max_length=150, verbose_name='Model')
     date = models.DateField(default='', **NULLABLE, verbose_name='Release date')
+
+    def __str__(self):
+        return f'{self.title} {self.model}'
+
+    class Meta:
+        verbose_name = 'product'
+        verbose_name_plural = 'products'
+        ordering = ('title', 'model',)
