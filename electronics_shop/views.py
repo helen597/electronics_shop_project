@@ -24,15 +24,19 @@ class SupplierCreateAPIView(CreateAPIView):
     queryset = Supplier.objecs.all()
 
     def perform_create(self, serializer):
-        try:
-            supplier = serializer.save()
-            if not supplier.the_supplier:
-                supplier.level = 0
-            elif supplier.the_supplier.level == 0:
-                supplier.level = 1
-            elif supplier.the_supplier.level == 1:
-                supplier.level = 2
-        except serializers.ValidationError('Выберите другого поставщика') as e:
+        supplier = serializer.save()
+        if not supplier.the_supplier:
+            supplier.level = 0
+            supplier.save()
+        elif supplier.the_supplier.level == 0:
+            supplier.level = 1
+            supplier.save()
+        elif supplier.the_supplier.level == 1:
+            supplier.level = 2
+            supplier.save()
+        else:
+            e = serializers.ValidationError('Выберите другого поставщика')
+            raise e
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
