@@ -1,13 +1,11 @@
 from django.urls import path
-from electronics_shop.views import (
-    SupplierListAPIView,
-    SupplierRetrieveAPIView,
-    SupplierCreateAPIView,
-    SupplierUpdateAPIView,
-    SupplierDestroyAPIView,
-    ProductListAPIView,
-)
+
 from electronics_shop.apps import ElectronicsShopConfig
+from electronics_shop.views import (ProductListAPIView, SupplierCreateAPIView,
+                                    SupplierDestroyAPIView,
+                                    SupplierListAPIView,
+                                    SupplierRetrieveAPIView,
+                                    SupplierUpdateAPIView)
 
 appname = ElectronicsShopConfig.name
 

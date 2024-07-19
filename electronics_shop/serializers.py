@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from electronics_shop.models import Supplier, Product
+
+from electronics_shop.models import Product, Supplier
 from validators import SupplierValidator
 
 

@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from rest_framework.generics import CreateAPIView
 from rest_framework_simplejwt.views import TokenObtainPairView
+
 from users.models import User
-from users.serializers import UserSerializer, MyTokenObtainPairSerializer
+from users.serializers import MyTokenObtainPairSerializer, UserSerializer
 
 
 # Create your views here.

@@ -1,18 +1,13 @@
-from rest_framework.generics import (
-    ListAPIView,
-    RetrieveAPIView,
-    CreateAPIView,
-    UpdateAPIView,
-    DestroyAPIView,
-)
-from electronics_shop.models import Supplier, Product
-from electronics_shop.serializers import (
-    SupplierSerializer,
-    ProductSerializer,
-    SupplierUpdateSerializer,
-)
 from rest_framework.filters import SearchFilter
+from rest_framework.generics import (CreateAPIView, DestroyAPIView,
+                                     ListAPIView, RetrieveAPIView,
+                                     UpdateAPIView)
+
+from electronics_shop.models import Product, Supplier
 from electronics_shop.permissions import IsActiveUser
+from electronics_shop.serializers import (ProductSerializer,
+                                          SupplierSerializer,
+                                          SupplierUpdateSerializer)
 
 
 # Create your views here.

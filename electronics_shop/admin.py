@@ -1,6 +1,7 @@
 from django.contrib import admin
-from electronics_shop.models import Product, Supplier
 from django.utils.html import format_html
+
+from electronics_shop.models import Product, Supplier
 
 # Register your models here.
 admin.site.register(Product)
