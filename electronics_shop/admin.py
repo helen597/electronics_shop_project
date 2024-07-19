@@ -29,7 +29,7 @@ class SupplierAdmin(admin.ModelAdmin):
 
     def link_to_supplier(self, obj):
         if obj.the_supplier:
-            link = f"/admin/electronics_shop/supplier/1/change/"
+            link = f"/admin/electronics_shop/supplier/{obj.the_supplier.id}/change/"
             return format_html(
                 '<a href="{}">Supplier {}</a>', link, obj.the_supplier.title
             )
