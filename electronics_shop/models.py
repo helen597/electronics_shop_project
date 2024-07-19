@@ -35,7 +35,7 @@ class Supplier(models.Model):
         auto_now_add=True, verbose_name="Creation time")
 
     def __str__(self):
-        return f"{self.level} {self.type} {self.title}"
+        return f"{self.level} {self.title}"
 
     class Meta:
         verbose_name = "supplier"

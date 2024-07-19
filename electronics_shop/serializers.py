@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from electronics_shop.models import Product, Supplier
-from validators import SupplierValidator
+from electronics_shop.validators import SupplierValidator
 
 
 class SupplierSerializer(serializers.ModelSerializer):
