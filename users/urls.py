@@ -7,7 +7,7 @@ from users.views import UserCreateAPIView, MyTokenObtainPairView
 app_name = UsersConfig.name
 
 urlpatterns = [
-    path('login/', MyTokenObtainPairView.as_view(), name='login'),
-    path('register/', UserCreateAPIView.as_view(), name='register'),
-    path('logout/', LogoutView.as_view(), name='logout')
+    path("login/", MyTokenObtainPairView.as_view(), name="login"),
+    path("register/", UserCreateAPIView.as_view(), name="register"),
+    path("logout/", LogoutView.as_view(), name="logout"),
 ]

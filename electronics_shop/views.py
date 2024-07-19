@@ -1,8 +1,16 @@
-from rest_framework.response import Response
-from rest_framework import serializers, status
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import (
+    ListAPIView,
+    RetrieveAPIView,
+    CreateAPIView,
+    UpdateAPIView,
+    DestroyAPIView,
+)
 from electronics_shop.models import Supplier, Product
-from electronics_shop.serializers import SupplierSerializer, ProductSerializer, SupplierUpdateSerializer
+from electronics_shop.serializers import (
+    SupplierSerializer,
+    ProductSerializer,
+    SupplierUpdateSerializer,
+)
 from rest_framework.filters import SearchFilter
 from electronics_shop.permissions import IsActiveUser
 
@@ -13,7 +21,7 @@ class SupplierListAPIView(ListAPIView):
     queryset = Supplier.objecs.all()
     permission_classes = [IsActiveUser]
     filter_backends = [SearchFilter]
-    search_fields = ['country']
+    search_fields = ["country"]
 
 
 class SupplierRetrieveAPIView(RetrieveAPIView):

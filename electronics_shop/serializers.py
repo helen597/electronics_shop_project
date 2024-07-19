@@ -4,22 +4,26 @@ from validators import SupplierValidator
 
 
 class SupplierSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Supplier
-        fields = '__all__'
-        validators = [SupplierValidator(field='the_supplier')]
+        fields = "__all__"
+        validators = [SupplierValidator(field="the_supplier")]
 
 
 class SupplierUpdateSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Supplier
         fields = [
-            'type', 'title', 'email', 'country',
-            'city', 'street', 'house_number', 'the_supplier'
+            "type",
+            "title",
+            "email",
+            "country",
+            "city",
+            "street",
+            "house_number",
+            "the_supplier",
         ]
-        validators = [SupplierValidator(field='the_supplier')]
+        validators = [SupplierValidator(field="the_supplier")]
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -27,4 +31,4 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = "__all__"

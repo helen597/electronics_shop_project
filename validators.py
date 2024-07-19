@@ -11,4 +11,4 @@ class SupplierValidator:
     def __call__(self, value):
         the_supplier = value.get(self.field)
         if the_supplier and the_supplier.level == 2:
-            raise serializers.ValidationError('Выберите другого поставщика')
+            raise serializers.ValidationError("Выберите другого поставщика")
