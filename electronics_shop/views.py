@@ -13,7 +13,7 @@ from electronics_shop.serializers import (ProductSerializer,
 # Create your views here.
 class SupplierListAPIView(ListAPIView):
     serializer_class = SupplierSerializer
-    queryset = Supplier.objecs.all()
+    queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
     filter_backends = [SearchFilter]
     search_fields = ["country"]
@@ -21,13 +21,13 @@ class SupplierListAPIView(ListAPIView):
 
 class SupplierRetrieveAPIView(RetrieveAPIView):
     serializer_class = SupplierSerializer
-    queryset = Supplier.objecs.all()
+    queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
 
 
 class SupplierCreateAPIView(CreateAPIView):
     serializer_class = SupplierSerializer
-    queryset = Supplier.objecs.all()
+    queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
 
     def perform_create(self, serializer):
@@ -43,7 +43,7 @@ class SupplierCreateAPIView(CreateAPIView):
 
 class SupplierUpdateAPIView(UpdateAPIView):
     serializer_class = SupplierUpdateSerializer
-    queryset = Supplier.objecs.all()
+    queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
 
     def perform_update(self, serializer):
@@ -59,7 +59,7 @@ class SupplierUpdateAPIView(UpdateAPIView):
 
 class SupplierDestroyAPIView(DestroyAPIView):
     serializer_class = SupplierSerializer
-    queryset = Supplier.objecs.all()
+    queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
 
 

@@ -16,7 +16,11 @@ urlpatterns = [
         SupplierRetrieveAPIView.as_view(),
         name="suppliers-detail",
     ),
-    path("suppliers/create/", SupplierCreateAPIView.as_view(), name="suppliers-create"),
+    path(
+        "suppliers/create/",
+        SupplierCreateAPIView.as_view(),
+        name="suppliers-create"
+    ),
     path(
         "suppliers/<int:pk>/update/",
         SupplierUpdateAPIView.as_view(),
