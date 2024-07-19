@@ -7,6 +7,7 @@ from users.serializers import MyTokenObtainPairSerializer, UserSerializer
 
 # Create your views here.
 class UserCreateAPIView(CreateAPIView):
+    """User creation controller"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
 

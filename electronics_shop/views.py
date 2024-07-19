@@ -12,6 +12,7 @@ from electronics_shop.serializers import (ProductSerializer,
 
 # Create your views here.
 class SupplierListAPIView(ListAPIView):
+    """Supplier list controller"""
     serializer_class = SupplierSerializer
     queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
@@ -20,12 +21,14 @@ class SupplierListAPIView(ListAPIView):
 
 
 class SupplierRetrieveAPIView(RetrieveAPIView):
+    """Supplier retrieve controller"""
     serializer_class = SupplierSerializer
     queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
 
 
 class SupplierCreateAPIView(CreateAPIView):
+    """Supplier create controller"""
     serializer_class = SupplierSerializer
     queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
@@ -42,6 +45,7 @@ class SupplierCreateAPIView(CreateAPIView):
 
 
 class SupplierUpdateAPIView(UpdateAPIView):
+    """Supplier update controller"""
     serializer_class = SupplierUpdateSerializer
     queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
@@ -58,12 +62,14 @@ class SupplierUpdateAPIView(UpdateAPIView):
 
 
 class SupplierDestroyAPIView(DestroyAPIView):
+    """Supplier delete controller"""
     serializer_class = SupplierSerializer
     queryset = Supplier.objects.all()
     permission_classes = [IsActiveUser]
 
 
 class ProductListAPIView(ListAPIView):
+    """Product list controller"""
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
     permission_classes = [IsActiveUser]
