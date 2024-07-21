@@ -22,7 +22,7 @@ class Supplier(models.Model):
     country = models.CharField(max_length=150, verbose_name="Country")
     city = models.CharField(max_length=150, verbose_name="City")
     street = models.CharField(max_length=150, verbose_name="Street")
-    house_number = models.SmallIntegerField(verbose_name="Number of a house")
+    house_number = models.PositiveSmallIntegerField(verbose_name="Number of a house")
     the_supplier = models.ForeignKey(
         "Supplier", **NULLABLE, on_delete=models.SET_NULL,
         verbose_name="Supplier"
@@ -48,7 +48,7 @@ class Product(models.Model):
     date = models.DateField(
         default="", **NULLABLE, verbose_name="Release date")
     supplier = models.ForeignKey(
-        "Supplier", **NULLABLE, on_delete=models.CASCADE,
+        Supplier, **NULLABLE, on_delete=models.CASCADE,
         verbose_name="Supplier"
     )
 
