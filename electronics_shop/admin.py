@@ -8,13 +8,14 @@ admin.site.register(Product)
 
 
 @admin.action(description="Clear debt")
-def clear_debt(queryset):
+def clear_debt(self, request, queryset):
     queryset.update(debt=0.00)
 
 
 @admin.register(Supplier)
 class SupplierAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "level",
         "type",
         "title",
