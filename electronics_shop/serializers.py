@@ -8,6 +8,7 @@ class SupplierSerializer(serializers.ModelSerializer):
     class Meta:
         model = Supplier
         fields = "__all__"
+        read_only_fields = ('level', )
         validators = [SupplierValidator(field="the_supplier")]
 
 

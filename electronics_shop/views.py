@@ -37,6 +37,7 @@ class SupplierCreateAPIView(CreateAPIView):
         supplier = serializer.save()
         if not supplier.the_supplier:
             supplier.level = 0
+            supplier.debt = 0
         elif supplier.the_supplier.level == 0:
             supplier.level = 1
         elif supplier.the_supplier.level == 1:
