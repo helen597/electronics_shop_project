@@ -31,7 +31,6 @@ class SupplierSerializer(serializers.ModelSerializer):
             "the_supplier",
             "products",
         )
-        # read_only_fields = ('level', 'products',)
         validators = [SupplierValidator(field="the_supplier")]
 
 
