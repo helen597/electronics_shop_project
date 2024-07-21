@@ -12,7 +12,9 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class SupplierSerializer(serializers.ModelSerializer):
-    products = ProductSerializer(source='product_set.all', many=True, read_only=True)
+    products = ProductSerializer(
+        source='product_set.all', many=True, read_only=True
+    )
 
     class Meta:
         model = Supplier
