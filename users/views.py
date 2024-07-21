@@ -1,4 +1,5 @@
 from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from users.models import User
@@ -10,6 +11,7 @@ class UserCreateAPIView(CreateAPIView):
     """User creation controller"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
+    permission_classes = [AllowAny]
 
     def perform_create(self, serializer):
         user = serializer.save(is_active=True)
